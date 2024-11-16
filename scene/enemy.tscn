@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv55cvghov2f1"]
+[gd_scene load_steps=3 format=3 uid="uid://cyaf674ekouk"]
 
-[ext_resource type="Script" path="res://script/enemy.gd" id="1_sqf7l"]
+[ext_resource type="Texture2D" uid="uid://b6gvtklc4ly5q" path="res://icon.svg" id="2_410ix"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4poy2"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbato"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(-3, -16)
-script = ExtResource("1_sqf7l")
+position = Vector2(1, -64)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_410ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_4poy2")
+shape = SubResource("CapsuleShape2D_cbato")
