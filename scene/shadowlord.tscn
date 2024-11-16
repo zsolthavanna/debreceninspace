@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://00ysuwbom5e6"]
+[gd_scene load_steps=8 format=3 uid="uid://00ysuwbom5e6"]
 
 [ext_resource type="Texture2D" uid="uid://dane2ad4cfcau" path="res://asset/Pig_Big-removebg-preview.png" id="1_rmrwr"]
+[ext_resource type="Script" path="res://script/shadowlord.gd" id="2_ppv4t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8qkn"]
 atlas = ExtResource("1_rmrwr")
@@ -43,3 +44,4 @@ frame_progress = 0.629982
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 12)
 shape = SubResource("RectangleShape2D_xr0t8")
+script = ExtResource("2_ppv4t")
