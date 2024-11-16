@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://psutbiqdmiec"]
+[gd_scene load_steps=7 format=3 uid="uid://dqi1nd3iyt5cr"]
 
 [ext_resource type="Texture2D" uid="uid://viqls3vhn2nq" path="res://asset/orc big&small/Orc_Big-removebg-preview.png" id="1_wxexh"]
 
@@ -34,13 +34,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnaeb"]
 size = Vector2(20, 22)
 
-[node name="EnemyOrc" type="Node2D"]
+[node name="EnemyOrc" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wvboi")
+autoplay = "default"
 frame_progress = 0.0274713
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_dnaeb")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-28, 0)
+collision_mask = 2
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(28, 0)
+collision_mask = 2

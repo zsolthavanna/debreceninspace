@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjocleqkoqq1a"]
+
+[ext_resource type="Texture2D" uid="uid://dane2ad4cfcau" path="res://asset/Pig_Big-removebg-preview.png" id="1_rmrwr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8qkn"]
+atlas = ExtResource("1_rmrwr")
+region = Rect2(10, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ym27"]
+atlas = ExtResource("1_rmrwr")
+region = Rect2(202, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brhsd"]
+atlas = ExtResource("1_rmrwr")
+region = Rect2(394, 0, 48, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfsjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8qkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ym27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brhsd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr0t8"]
+
+[sub_resource type="GDScript" id="GDScript_m3mvt"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Shadowlord" type="CharacterBody2D"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -4.0
+max_value = 10.0
+value = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_jfsjg")
+frame_progress = 0.629982
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 12)
+shape = SubResource("RectangleShape2D_xr0t8")
+script = SubResource("GDScript_m3mvt")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-1, 14)
+target_position = Vector2(-28, 0)
+collision_mask = 2
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-1, 14)
+target_position = Vector2(28, 0)
+collision_mask = 2
