@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731749882
+::res://::1731751130
 icon.svg::CompressedTexture2D::4575970632285188116::1731749730::1731749813::1::::<><>::
 README.md::TextFile::-1::1731749709::0::1::::<><>::
-::res://asset/::1731750024
+::res://asset/::1731750027
 Background.png::CompressedTexture2D::209014048996836034::1731749730::1731749885::1::::<><>::
 mountains-background-game-vector.jpg::CompressedTexture2D::5632453564269974019::1731749977::1731750027::1::::<><>::
 README.md::TextFile::-1::1731749730::0::1::::<><>::
@@ -93,10 +93,12 @@ PixelManUI.png::CompressedTexture2D::1759844360741742298::1731749730::1731749885
 Sky.png::CompressedTexture2D::7152294842141692762::1731749730::1731749885::1::::<><>::
 UIB.png::CompressedTexture2D::6510180748452164258::1731749730::1731749885::1::::<><>::
 ::res://asset/PixelMan(pixelArtPlatfotmer)/psd/::1731749730
-::res://scene/::1731749730
+::res://scene/::1731750773
 mainChar.tscn::PackedScene::4424222817316420180::1731749730::0::1::::<><>::res://script/main_char.gd<>uid://da8fttcearwxi::::res://asset/free-adventure-character-16x16-all/Knight_A.png
-node.tscn::PackedScene::6601380083220503254::1731749730::0::1::::<><>::uid://c8iowcd5hm55::::res://asset/Background.png<>uid://cecs8nftcuxdf::::res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png<>uid://b4bekk0ni6ux5::::res://scene/mainChar.tscn
+node.tscn::PackedScene::6601380083220503254::1731750773::0::1::::<><>::uid://cminxmrkyu876::::res://asset/mountains-background-game-vector.jpg<>uid://cecs8nftcuxdf::::res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png<>uid://b4bekk0ni6ux5::::res://scene/mainChar.tscn
 README.md::TextFile::-1::1731749730::0::1::::<><>::
-::res://script/::1731749730
+enemy.tscn::PackedScene::3924143926681171096::1731751224::0::1::::<><>::res://script/character_body_2d.gd
+::res://script/::1731751130
+character_body_2d.gd::GDScript::-1::1731751123::0::1::::<>CharacterBody2D<>::
 main_char.gd::GDScript::-1::1731749730::0::1::::<>CharacterBody2D<>::
 README.md::TextFile::-1::1731749730::0::1::::<><>::
