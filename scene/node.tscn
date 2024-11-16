@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1b01a6deddrq"]
+[gd_scene load_steps=11 format=3 uid="uid://c1b01a6deddrq"]
 
 [ext_resource type="Texture2D" uid="uid://cminxmrkyu876" path="res://asset/mountains-background-game-vector.jpg" id="1_570s5"]
 [ext_resource type="Texture2D" uid="uid://cecs8nftcuxdf" path="res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png" id="2_3jpuc"]
@@ -8,6 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://du13l3wpsn0a" path="res://scene/enemySkeleton.tscn" id="6_rlscw"]
 [ext_resource type="PackedScene" uid="uid://rooebl678w6h" path="res://scene/energon.tscn" id="7_pqjtn"]
 [ext_resource type="PackedScene" uid="uid://bjocleqkoqq1a" path="res://scene/shadowlord.tscn" id="7_px5fr"]
+
+[sub_resource type="GDScript" id="GDScript_y6npb"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn68d"]
 texture = ExtResource("2_3jpuc")
@@ -253,6 +268,7 @@ size = Vector2(0, 773.5)
 size = Vector2(0.125, 119)
 
 [node name="Node" type="Node"]
+script = SubResource("GDScript_y6npb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

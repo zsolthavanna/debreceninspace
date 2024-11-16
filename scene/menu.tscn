@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn4513amsh36i"]
+[gd_scene load_steps=8 format=3 uid="uid://bn4513amsh36i"]
 
 [ext_resource type="Script" path="res://script/TitleScreen.gd" id="1_l4sal"]
 [ext_resource type="Texture2D" uid="uid://cminxmrkyu876" path="res://asset/mountains-background-game-vector.jpg" id="2_jvwae"]
+[ext_resource type="AudioStream" uid="uid://y5bsccd7lsuy" path="res://button-202966.mp3" id="3_4eabr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oug4t"]
 texture = ExtResource("2_jvwae")
@@ -31,6 +32,12 @@ offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l4sal")
+
+[node name="ClickExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4eabr")
+
+[node name="ClickStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4eabr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -68,5 +75,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j4ilb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ns2d5")
 text = "Exit"
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
