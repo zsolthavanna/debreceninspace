@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv55cvghov2f1"]
+
+[ext_resource type="Script" path="res://script/enemy.gd" id="1_sqf7l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4poy2"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-3, -16)
+script = ExtResource("1_sqf7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_4poy2")
