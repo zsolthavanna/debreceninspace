@@ -5,10 +5,11 @@ const JUMP_VELOCITY = -300.0
 const AIR_CONTROL = 1.0 # Air control factor (0.0 = no control, 1.0 = full control)
 const ATTACK_COOLDOWN = 0.5
 
+var is_attacking : bool
 var health = 5
 var attack_timer = 0.0
 
-@onready var attack_ray = $RayCast2D
+@export var attack_ray : RayCast2D
 
 @onready var animation_player = $AnimatedSprite2D
 
@@ -18,9 +19,15 @@ func _ready():
 	health = 5
 
 func _physics_process(delta: float) -> void:
+	
+	
+	if animation_player.frame >= 5:
+		is_attacking = false
+		
+	
 	if attack_timer > 0:
 		attack_timer -= delta
-
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -28,19 +35,23 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("left", "right")
-
-	if direction != 0:
+	
+	if direction != 0 and not is_attacking:
 		velocity.x = direction * SPEED
 
 		if direction < 0:
-			animation_player.flip_h = true  
+			animation_player.flip_h = true
+			flip_ray(true)  
 		elif direction > 0:
-			animation_player.flip_h = false  
+			animation_player.flip_h = false
+			flip_ray(false)  
 
 		animation_player.play("run")  
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animation_player.play("idle") 
+		if not is_attacking:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			animation_player.play("idle")
+		 
 
 	if not is_on_floor():
 		if AIR_CONTROL == 0.0:
@@ -56,6 +67,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and attack_timer <= 0:
 		perform_attack()
 
+func flip_ray(should_flip):
+	if not should_flip:
+		attack_ray.scale.x = 1
+	if should_flip:
+		attack_ray.scale.x = -1	
+
 func take_damage(amount: int) -> void:
 	health -= amount
 	print("Player health: ", health)
@@ -67,9 +84,10 @@ func die() -> void:
 	queue_free()
 
 func perform_attack() -> void:
-
+	is_attacking = true
 	attack_timer = ATTACK_COOLDOWN
 	print("Performed an attack!")
+	animation_player.play("attack")
 	if attack_ray.is_colliding():
 		var enemy_ray = attack_ray.get_collider()
 		enemy_ray.take_damage(1)
