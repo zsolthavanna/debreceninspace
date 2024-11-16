@@ -221,6 +221,8 @@ size = Vector2(17.4583, 16)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(167, 574)
 scale = Vector2(1.5, 1.5)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_efaww")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -230,7 +232,7 @@ scale = Vector2(1.36111, 1.19833)
 sprite_frames = SubResource("SpriteFrames_7hnc4")
 animation = &"dying"
 autoplay = "default"
-frame_progress = 0.757455
+frame_progress = 0.384713
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.33333, 6.66665)
