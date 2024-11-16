@@ -205,7 +205,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dq55q"]
-size = Vector2(18, 37)
+size = Vector2(18, 26)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animated_skeleton", "hitbox")]
 script = ExtResource("1_1m6fv")
