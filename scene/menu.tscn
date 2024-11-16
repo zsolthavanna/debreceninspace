@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn4513amsh36i"]
+
+[ext_resource type="Script" path="res://script/TitleScreen.gd" id="1_l4sal"]
+[ext_resource type="Texture2D" uid="uid://cminxmrkyu876" path="res://asset/mountains-background-game-vector.jpg" id="2_jvwae"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oug4t"]
+texture = ExtResource("2_jvwae")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wqqy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4ilb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.231373, 0, 0.184314)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns2d5"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l4sal")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oug4t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 218.0
+offset_right = 912.0
+offset_bottom = 433.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.356863, 0.968627, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_3wqqy")
+text = "Start"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j4ilb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ns2d5")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dypyqxkh7iy5d"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_okl2r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q0ama"]
+font_size = 80
+font_color = Color(0.792157, 0, 0.278431, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_okl2r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0, 0.207843, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -218.0
+offset_right = 218.0
+offset_bottom = 151.0
+grow_horizontal = 2
+text = "Game Over!!!"
+label_settings = SubResource("LabelSettings_q0ama")
+
+[node name="StartAgain" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -35.0
+offset_right = 149.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.141176, 1, 0.52549, 1)
+theme_override_font_sizes/font_size = 45
+text = "Play Again"
+
+[connection signal="pressed" from="StartAgain" to="." method="_on_start_again_pressed"]

@@ -298,7 +298,6 @@ collision_mask = 3
 position = Vector2(5, -345.5)
 shape = SubResource("RectangleShape2D_fsxjc")
 
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 light_mask = 2
 position = Vector2(792, 6)
