@@ -230,9 +230,8 @@ texture_filter = 1
 position = Vector2(1.33333, 7.33332)
 scale = Vector2(1.36111, 1.19833)
 sprite_frames = SubResource("SpriteFrames_7hnc4")
-animation = &"dying"
+animation = &"jumping"
 autoplay = "default"
-frame_progress = 0.384713
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.33333, 6.66665)
