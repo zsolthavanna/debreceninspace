@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b4bekk0ni6ux5" path="res://scene/mainChar.tscn" id="3_u3i2r"]
 [ext_resource type="PackedScene" uid="uid://dqi1nd3iyt5cr" path="res://scene/enemyOrc.tscn" id="4_77nb3"]
 [ext_resource type="Script" path="res://script/enemy.gd" id="5_saj6t"]
-
 [ext_resource type="PackedScene" uid="uid://du13l3wpsn0a" path="res://scene/enemySkeleton.tscn" id="6_rlscw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn68d"]
