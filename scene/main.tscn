@@ -7,24 +7,58 @@
 size = Vector2(1437.06, 111.113)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(11, 67)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, 36)
-scale = Vector2(0.282131, 0.434783)
+[node name="MAP" type="Node2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+
+[node name="Platforms" type="Node" parent="MAP"]
+
+[node name="Platform1" type="Sprite2D" parent="MAP/Platforms"]
+position = Vector2(746.433, 121)
+scale = Vector2(0.542454, 0.434783)
 texture = ExtResource("2_raso5")
 
-[node name="CharacterBody2D" parent="Icon" instance=ExtResource("1_ehdq0")]
-position = Vector2(-5.85916, -185.027)
-scale = Vector2(3.56615, 2.45631)
-
-[node name="Camera2D" type="Camera2D" parent="Icon/CharacterBody2D"]
-position = Vector2(0, 33)
-zoom = Vector2(4, 4)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+[node name="StaticBody2D" type="StaticBody2D" parent="MAP/Platforms/Platform1"]
 position = Vector2(0, 2.415)
 scale = Vector2(1, 1.03)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MAP/Platforms/Platform1/StaticBody2D"]
+position = Vector2(1.46704, 20.3866)
+shape = SubResource("RectangleShape2D_ewveb")
+
+[node name="Platform2" type="Sprite2D" parent="MAP/Platforms"]
+position = Vector2(117, 159)
+scale = Vector2(0.282131, 0.434783)
+texture = ExtResource("2_raso5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MAP/Platforms/Platform2"]
+position = Vector2(0, 2.415)
+scale = Vector2(1, 1.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MAP/Platforms/Platform2/StaticBody2D"]
 position = Vector2(1.46701, 20.3866)
 shape = SubResource("RectangleShape2D_ewveb")
+
+[node name="Platform3" type="Sprite2D" parent="MAP/Platforms"]
+position = Vector2(-168, 108)
+scale = Vector2(0.0795979, 0.189036)
+texture = ExtResource("2_raso5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MAP/Platforms/Platform3"]
+position = Vector2(0, 2.415)
+scale = Vector2(1, 1.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MAP/Platforms/Platform3/StaticBody2D"]
+position = Vector2(1.46701, 20.3866)
+shape = SubResource("RectangleShape2D_ewveb")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ehdq0")]
+z_index = 1
+position = Vector2(73, -103)
+scale = Vector2(1.00612, 1.06796)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, 33)
+zoom = Vector2(4, 4)
