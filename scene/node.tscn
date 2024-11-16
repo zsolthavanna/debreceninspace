@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1b01a6deddrq"]
+[gd_scene load_steps=8 format=3 uid="uid://c1b01a6deddrq"]
 
 [ext_resource type="Texture2D" uid="uid://cminxmrkyu876" path="res://asset/mountains-background-game-vector.jpg" id="1_570s5"]
 [ext_resource type="Texture2D" uid="uid://cecs8nftcuxdf" path="res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png" id="2_3jpuc"]
 [ext_resource type="PackedScene" uid="uid://b4bekk0ni6ux5" path="res://scene/mainChar.tscn" id="3_u3i2r"]
+[ext_resource type="PackedScene" uid="uid://bu6jfay0eac5w" path="res://scene/energon.tscn" id="4_20xmw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn68d"]
 texture = ExtResource("2_3jpuc")
@@ -280,3 +281,6 @@ position = Vector2(1271, 438)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(5, -345.5)
 shape = SubResource("RectangleShape2D_fsxjc")
+
+[node name="Energon" parent="." instance=ExtResource("4_20xmw")]
+position = Vector2(110, 550)
