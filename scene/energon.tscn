@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu6jfay0eac5w"]
+
+[ext_resource type="Texture2D" uid="uid://cansgb53hk1nx" path="res://asset/colored_outline/demo_icons_colored_outline1.png" id="1_j4l36"]
+[ext_resource type="Script" path="res://script/energon.gd" id="1_l6380"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj1e5"]
+size = Vector2(26.25, 23)
+
+[node name="Energon" type="Area2D"]
+script = ExtResource("1_l6380")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 1)
+scale = Vector2(1.6875, 1.59375)
+texture = ExtResource("1_j4l36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.875, 1.5)
+shape = SubResource("RectangleShape2D_mj1e5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://psutbiqdmiec"]
+
+[ext_resource type="Texture2D" uid="uid://viqls3vhn2nq" path="res://asset/orc big&small/Orc_Big-removebg-preview.png" id="1_wxexh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug2bb"]
+atlas = ExtResource("1_wxexh")
+region = Rect2(10, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpxj2"]
+atlas = ExtResource("1_wxexh")
+region = Rect2(202, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u06y"]
+atlas = ExtResource("1_wxexh")
+region = Rect2(394, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvboi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug2bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpxj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u06y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnaeb"]
+size = Vector2(20, 22)
+
+[node name="EnemyOrc" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_wvboi")
+frame_progress = 0.187931
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+shape = SubResource("RectangleShape2D_dnaeb")
