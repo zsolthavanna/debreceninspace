@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1b01a6deddrq"]
+[gd_scene load_steps=12 format=3 uid="uid://c1b01a6deddrq"]
 
 [ext_resource type="Texture2D" uid="uid://cminxmrkyu876" path="res://asset/mountains-background-game-vector.jpg" id="1_570s5"]
 [ext_resource type="Texture2D" uid="uid://cecs8nftcuxdf" path="res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png" id="2_3jpuc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqi1nd3iyt5cr" path="res://scene/enemyOrc.tscn" id="4_77nb3"]
 [ext_resource type="Script" path="res://script/enemy.gd" id="5_saj6t"]
 [ext_resource type="PackedScene" uid="uid://du13l3wpsn0a" path="res://scene/enemySkeleton.tscn" id="6_rlscw"]
+[ext_resource type="PackedScene" uid="uid://rooebl678w6h" path="res://scene/energon.tscn" id="7_pqjtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn68d"]
 texture = ExtResource("2_3jpuc")
@@ -410,3 +411,27 @@ collision_mask = 2
 visibility_layer = 2
 position = Vector2(42.9375, 34.5)
 shape = SubResource("RectangleShape2D_vviqg")
+
+[node name="EnemySkeleton2" parent="." instance=ExtResource("6_rlscw")]
+position = Vector2(214, 218)
+
+[node name="EnemyOrc2" parent="." instance=ExtResource("4_77nb3")]
+position = Vector2(280, 228)
+
+[node name="EnemyOrc3" parent="." instance=ExtResource("4_77nb3")]
+position = Vector2(-112, 126)
+
+[node name="Energon" parent="." instance=ExtResource("7_pqjtn")]
+position = Vector2(-68, 134)
+
+[node name="EnemyOrc4" parent="." instance=ExtResource("4_77nb3")]
+position = Vector2(-23, 129)
+
+[node name="Energon2" parent="." instance=ExtResource("7_pqjtn")]
+position = Vector2(242, 229)
+
+[node name="Energon3" parent="." instance=ExtResource("7_pqjtn")]
+position = Vector2(519, 279)
+
+[node name="Energon4" parent="." instance=ExtResource("7_pqjtn")]
+position = Vector2(1078, 357)
