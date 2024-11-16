@@ -71,5 +71,5 @@ func perform_attack() -> void:
 	attack_timer = ATTACK_COOLDOWN
 	print("Performed an attack!")
 	if attack_ray.is_colliding():
-		var enemy = attack_ray.get_collider()
-		enemy.take_damage(1)
+		var enemy_ray = attack_ray.get_collider()
+		enemy_ray.take_damage(1)

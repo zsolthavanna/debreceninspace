@@ -8,27 +8,28 @@
 size = Vector2(1437.06, 111.113)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, -7)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, 36)
+position = Vector2(14, 54)
 scale = Vector2(0.282131, 0.434783)
 texture = ExtResource("2_raso5")
-
-[node name="CharacterBody2D" parent="Icon" instance=ExtResource("1_ehdq0")]
-position = Vector2(-5.85916, -185.027)
-scale = Vector2(3.56615, 2.45631)
-
-[node name="Camera2D" type="Camera2D" parent="Icon/CharacterBody2D"]
-position = Vector2(0, 33)
-zoom = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
 position = Vector2(0, 2.415)
 scale = Vector2(1, 1.03)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
-position = Vector2(1.46701, 20.3866)
+position = Vector2(3.54445, 19.9854)
 shape = SubResource("RectangleShape2D_ewveb")
 
+[node name="CharacterBody2D2" parent="Icon" instance=ExtResource("1_ehdq0")]
+position = Vector2(-49.6223, -207)
+scale = Vector2(3.56615, 2.45631)
+
+[node name="Camera2D" type="Camera2D" parent="Icon/CharacterBody2D2"]
+position = Vector2(0, 29.0273)
+zoom = Vector2(4, 4)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_r3u71")]
-position = Vector2(96, 22)
+position = Vector2(95, 47)
