@@ -1,4 +1,3 @@
 res://scene/node.tscn
-res://scene/enemy.tscn
 res://scene/mainChar.tscn
-res://script/main_char.gd
+res://scene/enemy.tscn

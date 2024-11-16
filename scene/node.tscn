@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cecs8nftcuxdf" path="res://asset/PixelMan(pixelArtPlatfotmer)/png/PixelManPlatforms.png" id="2_3jpuc"]
 [ext_resource type="PackedScene" uid="uid://b4bekk0ni6ux5" path="res://scene/mainChar.tscn" id="3_u3i2r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsxjc"]
-size = Vector2(6, 943)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn68d"]
 texture = ExtResource("2_3jpuc")
 0:0/0 = 0
@@ -244,26 +241,22 @@ texture = ExtResource("2_3jpuc")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rn68d")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsxjc"]
+size = Vector2(5.5, 943)
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -142.0
-offset_top = -383.0
-offset_right = 627.0
-offset_bottom = 49.0
+offset_left = -376.0
+offset_top = -312.0
+offset_right = 393.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_570s5")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="TextureRect"]
-position = Vector2(1271, 438)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D2"]
-position = Vector2(-1125, 34)
-shape = SubResource("RectangleShape2D_fsxjc")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(58, 30)
@@ -273,6 +266,13 @@ layer_0/tile_data = PackedInt32Array(2162690, 65536, 0, 2162691, 65536, 0, 21626
 
 [node name="Player1" parent="." instance=ExtResource("3_u3i2r")]
 position = Vector2(129, 534)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(895, 126)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-891.25, -41)
+shape = SubResource("RectangleShape2D_fsxjc")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1271, 438)
