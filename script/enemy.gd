@@ -1,27 +1,16 @@
-extends CharacterBody2D
+extends Node2D
 
-const SPEED = 300.0
-const MOVE_DISTANCE = 500.0 
-var start_position : Vector2
-var moving_left : bool = true  # Track if the enemy is moving left
+const SPEED = 100.0
 
-func _ready() -> void:
-	start_position = position  # Store the initial position of the enemy
+var direction = 1
 
-func _physics_process(delta: float) -> void:
+@onready var ray_cast_right = $RayCastRight
+@onready var ray_cast_left = $RayCastLeft
 
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	# Set horizontal movement direction
-	if moving_left:
-		velocity.x = -SPEED  # Move left
-	else:
-		velocity.x = SPEED  # Move right
-
-	# Move and slide the character using the velocity
-	move_and_slide()
-
-	# Check if the enemy has reached the specified distance
-	if abs(position.x - start_position.x) >= MOVE_DISTANCE:
-		moving_left = not moving_left  # Flip the direction
-		start_position = position  # Reset the start position for the new direction
+func _process(delta):
+	
+	if ray_cast_right.is_colliding():
+		direction = -1
+	if ray_cast_left.is_colliding():
+		direction = 1
+	position.x += direction * SPEED * delta
