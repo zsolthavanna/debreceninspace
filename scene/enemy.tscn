@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b6gvtklc4ly5q" path="res://icon.svg" id="2_410ix"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbato"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlut1"]
+radius = 61.0
+height = 126.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(1, -64)
@@ -11,5 +13,15 @@ position = Vector2(1, -64)
 texture = ExtResource("2_410ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_cbato")
+shape = SubResource("CapsuleShape2D_rlut1")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-78, 1)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(2, 2)
+target_position = Vector2(87, 1)
+collision_mask = 3
+collide_with_areas = true
