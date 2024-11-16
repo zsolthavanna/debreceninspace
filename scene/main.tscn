@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj4mpwpscjrb3"]
+[gd_scene load_steps=5 format=3 uid="uid://dj4mpwpscjrb3"]
 
 [ext_resource type="PackedScene" uid="uid://dsmbgnf7dif6y" path="res://scene/player.tscn" id="1_ehdq0"]
 [ext_resource type="Texture2D" uid="uid://bgjv484xco3bv" path="res://PLAT2.webp" id="2_raso5"]
+[ext_resource type="PackedScene" uid="uid://d1hmnni2qqnfm" path="res://scene/enemy.tscn" id="3_r3u71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewveb"]
 size = Vector2(1437.06, 111.113)
@@ -67,6 +68,7 @@ scale = Vector2(1, 1.03)
 position = Vector2(1.46701, 20.3866)
 shape = SubResource("RectangleShape2D_ewveb")
 
+2024fall-t1-zohair
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ehdq0")]
 z_index = 1
 position = Vector2(73, -103)

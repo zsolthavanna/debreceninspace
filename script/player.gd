@@ -3,17 +3,24 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
 const AIR_CONTROL = 1.0 # Air control factor (0.0 = no control, 1.0 = full control)
+const ATTACK_COOLDOWN = 0.5
 
-var health = 5  # Player's current health
+var health = 5
+var attack_timer = 0.0
 
-@onready var animation_player = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node
+@onready var attack_ray = $RayCast2D
+
+@onready var animation_player = $AnimatedSprite2D
+
+@onready var enemy = get_node_or_null(".")
 
 func _ready():
-	# Initialize health (if needed)
 	health = 5
 
 func _physics_process(delta: float) -> void:
-	
+	if attack_timer > 0:
+		attack_timer -= delta
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -46,13 +53,23 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		die()
 
+	if Input.is_action_just_pressed("attack") and attack_timer <= 0:
+		perform_attack()
+
 func take_damage(amount: int) -> void:
 	health -= amount
 	print("Player health: ", health)
 	if health <= 0:
 		die()
 
-# Function to handle player death
 func die() -> void:
 	print("Player has died!")
-	queue_free()  
+	queue_free()
+
+func perform_attack() -> void:
+
+	attack_timer = ATTACK_COOLDOWN
+	print("Performed an attack!")
+	if attack_ray.is_colliding():
+		var enemy = attack_ray.get_collider()
+		enemy.take_damage(1)
