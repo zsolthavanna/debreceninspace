@@ -14,6 +14,9 @@ func _process(delta):
 	if ray_cast_left.is_colliding():
 		direction = 1
 	position.x += direction * SPEED * delta
+	
+	var isLeft = direction < 0 
+	sprite_2d.flip_h = isLeft
 
 # Function to handle collision with the player
 func _on_collision_with_player(player):
